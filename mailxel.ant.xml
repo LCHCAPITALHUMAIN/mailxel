@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<project name="mailxel" default="deliver" basedir=".">
+	<description>mailxel build file.</description>
+
+	<property name="gwt.version" value="gwt-2.4.0" />
+	<property name="gwt.url" value="http://google-web-toolkit.googlecode.com/files/${gwt.version}.zip" />
+	<property name="gwt.downloaded" value="downloads/${gwt.version}.zip" />
+
+	<property name="jsoup.url" value="http://jsoup.org/packages/jsoup-1.6.3.jar" />
+	<property name="jsoup.fn" value="jsoup-1.6.3.jar" />
+
+	<!--property name="sqlite.url" value="http://www.xerial.org/maven/repository/snapshot/org/xerial/sqlite-jdbc/3.7.6.3-SNAPSHOT/sqlite-jdbc-3.7.6.3-20110609.081603-3.jar" -->
+	<property name="sqlite.url" value="http://www.xerial.org/maven/repository/snapshot/org/xerial/sqlite-jdbc/3.7.8-SNAPSHOT/sqlite-jdbc-3.7.8-20111025.014814-1.jar" />
+	<property name="sqlite.fn" value="sqlite-jdbc-3.7.8-20111025.014814-1.jar" />
+
+	<property name="gwt.sdk" value="downloads/${gwt.version}/${gwt.version}" />
+	<property name="gwt.user.jar" value="${gwt.sdk}/gwt-user.jar" />
+	<property name="gwt.dev.jar" value="${gwt.sdk}}/gwt-dev.jar" />
+
+	<property name="mailxel.build" value="generated" />
+	<property name="mailxel.package" value="ch.heftix.mailxel" />
+	<property name="mailxel.module" value="Mailxel" />
+
+
+	<!-- set classpath -->
+	<path id="project.class.path.15">
+		<pathelement path="${java.class.path}/" />
+		<path path="${gwt.user.jar}" />
+		<path path="${gwt.dev.jar}" />
+		<path path="war/WEB-INF/lib/mail.jar" />
+		<path path="war/WEB-INF/lib/${sqlite.fn}" />
+	</path>
+
+	<path id="project.class.path">
+		<pathelement location="generated/classes" />
+		<pathelement location="${gwt.sdk}/gwt-user.jar"/>
+		<fileset dir="${gwt.sdk}" includes="gwt-dev*.jar" />
+		<!-- Add any additional non-server libs (such as JUnit) -->
+		<path path="war/WEB-INF/lib/imap.jar" />
+		<path path="war/WEB-INF/lib/mail.jar" />
+		<path path="war/WEB-INF/lib/smtp.jar" />
+		<path path="war/WEB-INF/lib/xelutil.jar" />
+		<path path="war/WEB-INF/lib/tnef.jar" />
+		<path path="war/WEB-INF/lib/junit-4.6.jar" />
+		<path path="war/WEB-INF/lib/${sqlite.fn}" />
+		<path path="war/WEB-INF/lib/${jsoup.fn}" />
+	</path>
+
+	<available file="downloads/${gwt.version}/${gwt.version}/gwt-user.jar" property="gwt.present" />
+	<available file="downloads/${jsoup.fn}" property="jsoup.present" />
+	<available file="downloads/${sqlite.fn}" property="sqlite.present" />
+
+	<target name="download" depends="download.gwt, download.jsoup, download.sqlite">
+		<mkdir dir="downloads" />
+	</target>
+
+	<target name="download.gwt" unless="${gwt.present}">
+		<get src="${gwt.url}" skipexisting="true" dest="downloads" />
+		<mkdir dir="downloads/${gwt.version}" />
+		<unzip dest="downloads/${gwt.version}" src="${gwt.downloaded}" overwrite="false">
+			<patternset>
+				<include name="${gwt.version}/gwt-user.jar" />
+				<include name="${gwt.version}/gwt-dev.jar" />
+			</patternset>
+		</unzip>
+	</target>
+
+	<target name="download.jsoup" unless="${jsoup.present}">
+		<get src="${jsoup.url}" skipexisting="true" dest="downloads" />
+		<copy file="downloads/${jsoup.fn}" todir="war/WEB-INF/lib/" />
+	</target>
+
+	<target name="download.sqlite" unless="${sqlite.present}">
+		<get src="${sqlite.url}" skipexisting="true" dest="downloads" />
+		<copy file="downloads/${sqlite.fn}" todir="war/WEB-INF/lib/" />
+	</target>
+
+	<target name="compile.server" depends="download">
+		<mkdir dir="${mailxel.build}/classes" />
+		<javac srcdir="src" destdir="${mailxel.build}/classes" includes="**" source="1.5">
+			<classpath refid="project.class.path" />
+		</javac>
+		<copy file="src/ch/heftix/mailxel/server/mailxel.sql" todir="${mailxel.build}/classes/ch/heftix/mailxel/server" />
+		<copy file="src/ch/heftix/mailxel/server/mailxel-update-0.5.2-0.6.0.sql" todir="${mailxel.build}/classes/ch/heftix/mailxel/server" />
+		<copy file="src/ch/heftix/mailxel/server/mailxel-update-0.6.0-0.6.1.sql" todir="${mailxel.build}/classes/ch/heftix/mailxel/server" />
+		<copy file="src/ch/heftix/mailxel/server/mailxel-update-0.6.1-0.6.4.sql" todir="${mailxel.build}/classes/ch/heftix/mailxel/server" />
+		<copy file="src/ch/heftix/mailxel/server/mailxel-update-0.6.4-0.7.0.sql" todir="${mailxel.build}/classes/ch/heftix/mailxel/server" />
+		<copy file="src/ch/heftix/mailxel/server/mailxel-update-0.7.0-0.7.1.sql" todir="${mailxel.build}/classes/ch/heftix/mailxel/server" />
+		<copy file="src/ch/heftix/mailxel/server/mailxel-update-0.7.1-0.7.3.sql" todir="${mailxel.build}/classes/ch/heftix/mailxel/server" />
+		<copy file="src/ch/heftix/mailxel/server/mailxel-update-0.7.3-0.7.4.sql" todir="${mailxel.build}/classes/ch/heftix/mailxel/server" />
+		<copy file="src/ch/heftix/mailxel/server/mailxel-update-0.7.4-0.7.6.sql" todir="${mailxel.build}/classes/ch/heftix/mailxel/server" />
+		<copy file="src/ch/heftix/mailxel/server/mailxel-update-0.7.6-0.7.7.sql" todir="${mailxel.build}/classes/ch/heftix/mailxel/server" />
+		<copy file="src/ch/heftix/mailxel/server/mailxel-update-0.7.7-0.8.0.sql" todir="${mailxel.build}/classes/ch/heftix/mailxel/server" />
+		<copy file="src/ch/heftix/mailxel/server/mailxel-update-0.8.0-0.8.1.sql" todir="${mailxel.build}/classes/ch/heftix/mailxel/server" />
+		<copy file="src/ch/heftix/mailxel/server/mailxel-update-0.8.1-0.9.3.sql" todir="${mailxel.build}/classes/ch/heftix/mailxel/server" />
+		<copy file="src/ch/heftix/mailxel/server/mailxel-update-0.9.3-0.9.4.sql" todir="${mailxel.build}/classes/ch/heftix/mailxel/server" />
+	</target>
+
+	<target name="compile.test" depends="compile.server">
+		<mkdir dir="${mailxel.build}/test/classes" />
+		<javac srcdir="test" destdir="${mailxel.build}/test/classes" includes="**" source="1.5">
+			<classpath refid="project.class.path" />
+		</javac>
+		<copy todir="${mailxel.build}/test/classes/ch/heftix/mailxel/server">
+			<fileset dir="test/ch/heftix/mailxel/server" includes="sample-mail-*.eml" />
+		</copy>
+		<copy todir="${mailxel.build}/test/classes/ch/heftix/mailxel/server/test-mails">
+			<fileset dir="test/ch/heftix/mailxel/server/test-mails" includes="*.eml" />
+		</copy>
+	</target>
+
+	<target name="jar" depends="compile.server">
+		<jar jarfile="${mailxel.build}/mailxel.jar">
+			<fileset dir="${mailxel.build}/classes" />
+		</jar>
+	</target>
+
+	<target name="gwtc" depends="compile.server" description="GWT compile to JavaScript">
+		<java failonerror="true" fork="true" classname="com.google.gwt.dev.Compiler">
+			<classpath>
+				<pathelement location="src" />
+				<path refid="project.class.path" />
+			</classpath>
+			<!-- add jvmarg -Xss16M or similar if you see a StackOverflowError -->
+			<jvmarg value="-Xmx256M" />
+			<!-- Additional arguments like -style PRETTY or -logLevel DEBUG -->
+			<arg value="${mailxel.package}.${mailxel.module}" />
+		</java>
+	</target>
+
+	<target name="war" depends="jar,gwtc,private.war" />
+
+	<target name="private.war">
+		<war destfile="${mailxel.build}/mailxel.war" webxml="war/WEB-INF/web.xml">
+			<!-- lib file="war/WEB-INF/lib/imap.jar" -->
+			<lib file="war/WEB-INF/lib/mail.jar" />
+			<!-- lib file="war/WEB-INF/lib/mailapi.jar" -->
+			<!-- lib file="war/WEB-INF/lib/smtp.jar" -->
+			<lib file="war/WEB-INF/lib/xelutil.jar" />
+			<lib file="war/WEB-INF/lib/tnef.jar" />
+			<lib file="${gwt.user.jar}" />
+			<lib file="war/WEB-INF/lib/${sqlite.fn}" />
+			<lib file="war/WEB-INF/lib/${jsoup.fn}" />
+			<lib file="${mailxel.build}/mailxel.jar" />
+			<zipfileset dir="war/mailxel" prefix="mailxel" />
+			<zipfileset dir="war/img" prefix="img" />
+			<fileset file="war/index.html" />
+			<fileset file="war/MailXel.html" />
+			<fileset file="war/MailXel.css" />
+		</war>
+	</target>
+	<target name="snapshot" depends="clean, version, private.deliver, test, verifySchema" />
+
+	<target name="deliver" depends="clean, version, war, test, verifySchema, private.deliver" />
+
+	<target name="private.testwar" depends="private.war">
+		<delete file="${mailxel.build}/mailxel-dev.jar" />
+		<property name="mailxel.delivery" value="${mailxel.build}/mailxel-dev.jar" />
+		<antcall target="embed" />
+	</target>
+
+	<target name="private.deliver" depends="version, embed" />
+
+	<target name="embed">
+		<ant antfile="ejetty-wrap.ant.xml" target="deliver">
+			<property name="embedded.war" value="generated/mailxel.war" />
+			<property name="ejetty.properties" value="ejetty.properties" />
+			<property name="result" value="${mailxel.delivery}" />
+		</ant>
+	</target>
+
+	<target name="clean">
+		<!-- Delete the bin directory tree -->
+		<delete dir="generated" failonerror="false" />
+	</target>
+
+	<target name="version" depends="compile.server">
+		<java classname="ch.heftix.mailxel.client.Version" classpath="generated/classes" outputproperty="mailxel.v" />
+		<echo message="building version: ${mailxel.v}" />
+		<property name="mailxel.delivery" value="${mailxel.build}/mailxel-${mailxel.v}.jar" />
+	</target>
+
+	<target name="verifySchema" depends="compile.test">
+		<java classname="ch.heftix.mailxel.server.VerfiySchemaSyntax" failonerror="true" fork="false">
+			<classpath path="generated/classes" />
+			<classpath path="generated/test/classes" />
+			<classpath refid="project.class.path" />
+		</java>
+		<java classname="ch.heftix.mailxel.server.VerfiySchemaSyntax" failonerror="true" fork="false">
+			<arg line="mailxel-0.5.2.sql" />
+			<classpath path="generated/classes" />
+			<classpath path="generated/test/classes" />
+			<classpath refid="project.class.path" />
+			<classpath path="src" />
+		</java>
+	</target>
+
+	<target name="test" depends="compile.test">
+		<java classname="ch.heftix.mailxel.server.MailServiceImplTest" failonerror="true" fork="true">
+			<classpath path="generated/classes" />
+			<classpath path="generated/test/classes" />
+			<classpath refid="project.class.path" />
+		</java>
+		<java classname="ch.heftix.mailxel.server.MailxelTestSuite" failonerror="true" fork="true">
+			<classpath path="generated/classes" />
+			<classpath path="generated/test/classes" />
+			<classpath refid="project.class.path" />
+		</java>
+	</target>
+
+</project>
