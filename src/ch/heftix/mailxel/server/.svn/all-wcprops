@@ -1,0 +1,269 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/250/trunk/mailxel/src/ch/heftix/mailxel/server
+END
+MailxelDBDataSource.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/327/trunk/mailxel/src/ch/heftix/mailxel/server/MailxelDBDataSource.java
+END
+ConfigManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/530/trunk/mailxel/src/ch/heftix/mailxel/server/ConfigManager.java
+END
+LimitedMaxReadInputStream.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/303/trunk/mailxel/src/ch/heftix/mailxel/server/LimitedMaxReadInputStream.java
+END
+MailAPIUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/538/trunk/mailxel/src/ch/heftix/mailxel/server/MailAPIUtil.java
+END
+VarArgs.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/303/trunk/mailxel/src/ch/heftix/mailxel/server/VarArgs.java
+END
+FileUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/500/trunk/mailxel/src/ch/heftix/mailxel/server/FileUtil.java
+END
+JDBCUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/303/trunk/mailxel/src/ch/heftix/mailxel/server/JDBCUtil.java
+END
+MailFolderTraverser.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/548/trunk/mailxel/src/ch/heftix/mailxel/server/MailFolderTraverser.java
+END
+mailxel-0.5.2.sql
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/198/trunk/mailxel/src/ch/heftix/mailxel/server/mailxel-0.5.2.sql
+END
+BlobTO.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/303/trunk/mailxel/src/ch/heftix/mailxel/server/BlobTO.java
+END
+Mail.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/538/trunk/mailxel/src/ch/heftix/mailxel/server/Mail.java
+END
+MailDB.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/548/trunk/mailxel/src/ch/heftix/mailxel/server/MailDB.java
+END
+TransientPreferences.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/485/trunk/mailxel/src/ch/heftix/mailxel/server/TransientPreferences.java
+END
+mailxel-update-0.2.3-0.3.0.sql
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/107/trunk/mailxel/src/ch/heftix/mailxel/server/mailxel-update-0.2.3-0.3.0.sql
+END
+SMTPUsernamePasswordAuthenticator.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/303/trunk/mailxel/src/ch/heftix/mailxel/server/SMTPUsernamePasswordAuthenticator.java
+END
+mailxel-update-0.4.0-0.5.0.sql
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/84/trunk/mailxel/src/ch/heftix/mailxel/server/mailxel-update-0.4.0-0.5.0.sql
+END
+MailPart.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/366/trunk/mailxel/src/ch/heftix/mailxel/server/MailPart.java
+END
+MailxelFileDataSource.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/303/trunk/mailxel/src/ch/heftix/mailxel/server/MailxelFileDataSource.java
+END
+mailxel-update-0.5.0-0.5.1.sql
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/107/trunk/mailxel/src/ch/heftix/mailxel/server/mailxel-update-0.5.0-0.5.1.sql
+END
+mailxel.sql
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/539/trunk/mailxel/src/ch/heftix/mailxel/server/mailxel.sql
+END
+MailPartList.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/495/trunk/mailxel/src/ch/heftix/mailxel/server/MailPartList.java
+END
+mailxel-update-0.5.2-0.6.0.sql
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/198/trunk/mailxel/src/ch/heftix/mailxel/server/mailxel-update-0.5.2-0.6.0.sql
+END
+mailxel-update-0.6.0-0.6.1.sql
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/195/trunk/mailxel/src/ch/heftix/mailxel/server/mailxel-update-0.6.0-0.6.1.sql
+END
+mailxel-update-0.7.0-0.7.1.sql
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/314/trunk/mailxel/src/ch/heftix/mailxel/server/mailxel-update-0.7.0-0.7.1.sql
+END
+mailxel-update-0.6.1-0.6.4.sql
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/247/trunk/mailxel/src/ch/heftix/mailxel/server/mailxel-update-0.6.1-0.6.4.sql
+END
+mailxel-update-0.6.4-0.7.0.sql
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/306/trunk/mailxel/src/ch/heftix/mailxel/server/mailxel-update-0.6.4-0.7.0.sql
+END
+mailxel-update-0.8.0-0.8.1.sql
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/519/trunk/mailxel/src/ch/heftix/mailxel/server/mailxel-update-0.8.0-0.8.1.sql
+END
+mailxel-update-0.7.1-0.7.3.sql
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/331/trunk/mailxel/src/ch/heftix/mailxel/server/mailxel-update-0.7.1-0.7.3.sql
+END
+MboxReader.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/303/trunk/mailxel/src/ch/heftix/mailxel/server/MboxReader.java
+END
+MailDBAccessAPI.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/404/trunk/mailxel/src/ch/heftix/mailxel/server/MailDBAccessAPI.java
+END
+DBUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/333/trunk/mailxel/src/ch/heftix/mailxel/server/DBUtil.java
+END
+mailxel-update-0.8.1-0.9.3.sql
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/539/trunk/mailxel/src/ch/heftix/mailxel/server/mailxel-update-0.8.1-0.9.3.sql
+END
+mailxel-update-0.7.3-0.7.4.sql
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/351/trunk/mailxel/src/ch/heftix/mailxel/server/mailxel-update-0.7.3-0.7.4.sql
+END
+mailxel-update-0.7.7-0.8.0.sql
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/476/trunk/mailxel/src/ch/heftix/mailxel/server/mailxel-update-0.7.7-0.8.0.sql
+END
+MailServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/548/trunk/mailxel/src/ch/heftix/mailxel/server/MailServiceImpl.java
+END
+WheelbasedPatternFinder.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/303/trunk/mailxel/src/ch/heftix/mailxel/server/WheelbasedPatternFinder.java
+END
+MailSaveQueue.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/548/trunk/mailxel/src/ch/heftix/mailxel/server/MailSaveQueue.java
+END
+FolderHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/303/trunk/mailxel/src/ch/heftix/mailxel/server/FolderHandler.java
+END
+mailxel-update-0.7.4-0.7.6.sql
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/427/trunk/mailxel/src/ch/heftix/mailxel/server/mailxel-update-0.7.4-0.7.6.sql
+END
+Mail2DB.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/548/trunk/mailxel/src/ch/heftix/mailxel/server/Mail2DB.java
+END
+mailxel-update-0.7.6-0.7.7.sql
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/444/trunk/mailxel/src/ch/heftix/mailxel/server/mailxel-update-0.7.6-0.7.7.sql
+END
+MailReorganizerFolderHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/525/trunk/mailxel/src/ch/heftix/mailxel/server/MailReorganizerFolderHandler.java
+END
+AttachmentDescriptor.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/521/trunk/mailxel/src/ch/heftix/mailxel/server/AttachmentDescriptor.java
+END
+MailSaveWorker.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/545/trunk/mailxel/src/ch/heftix/mailxel/server/MailSaveWorker.java
+END
